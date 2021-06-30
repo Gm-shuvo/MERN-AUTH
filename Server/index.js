@@ -14,6 +14,7 @@ DbConnect()
 
 //Add Middleware
 app.use(express.json());
+
 app.use(helmet());
 app.use(cors({
     origin: 'https://localhost:8080'

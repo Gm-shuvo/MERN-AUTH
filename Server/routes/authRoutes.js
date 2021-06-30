@@ -2,6 +2,6 @@ const router = require('express').Router()
 const {registerController} = require('../controllers/authController')
 
 //SignUp with username,email,password
-router.get('/signup',registerController)
+router.post('/signup',registerController)
 
 module.exports = router
