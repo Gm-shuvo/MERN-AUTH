@@ -2,10 +2,15 @@ const express = require('express');
 const helmet = require('helmet')
 const cors = require('cors')
 const authRoutes = require('./routes/authRoutes')
+const DbConnect = require('./Db/db')
 
 require('dotenv').config();
 
+//Initialize Express Server
 const app = express();
+
+//Database Connect
+DbConnect()
 
 //Add Middleware
 app.use(express.json());
@@ -15,9 +20,8 @@ app.use(cors({
 }
 ));
 
-//Add Routes
+//Add all Routes
 app.use('/api',authRoutes);
-
 
 //Add 404 route
 app.use((req, res, next) =>{
